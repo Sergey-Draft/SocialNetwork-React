@@ -1,0 +1,28 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    grid-gap             : 10px;
+}
+
+.dialogsItems {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.dialogsItems .active {
+    border-bottom: white 1px solid;
+    color: grey;
+    /* text-decoration: underline white ; */
+}
+
+.dialog {
+    margin: 20px;
+}
+
+.dialog .active {
+    border-bottom: white 1px solid;
+}
+
+.messages {
+    padding: 15px;
+}
