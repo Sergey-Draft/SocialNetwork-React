@@ -1,18 +1,14 @@
 import React from 'react';
 import MyPosts from './MyPosts/MyPosts';
 import s from './Profile.module.css'
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
   return (
-    <div className={s.content}>
-      <div>
-        <img src='https://www.prelepapoezija.com/wp-content/uploads/2015/01/hed2.jpg' />
-      </div>
-      <div className={s.user}>
-        ava+description
-      </div>
+    <div>
+    <ProfileInfo />
       <MyPosts />
-    </div>
+      </div>
   )
 }
 
