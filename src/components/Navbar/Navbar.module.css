@@ -1,6 +1,6 @@
 .nav {
   grid-area: n;
-  background-color: green;
+  background-color: white;
   font-size: 24px;
   
 }
@@ -9,7 +9,7 @@
   height: 30px;
   padding-left: 10px;
   margin: 15px 20px;
-  color: white;
+  color: #939598;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -26,7 +26,9 @@
 
 .item a:link, a:active, a:visited {
   text-decoration: none;
-  color: white;
+  color: #939598;
 }
+
+
 
 

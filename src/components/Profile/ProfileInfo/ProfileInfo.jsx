@@ -8,6 +8,9 @@ const ProfileInfo = () => {
         <img src='https://www.prelepapoezija.com/wp-content/uploads/2015/01/hed2.jpg' />
       </div>
       <div className={s.descriptionBlock}>
+        <div className="intro">
+          .avatar
+        </div>
         ava+description
       </div>
     </div>

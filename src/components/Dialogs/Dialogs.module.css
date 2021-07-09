@@ -1,9 +1,9 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 4fr 8fr;
+    grid-template-columns: 5fr 7fr;
     grid-gap             : 10px;
     background-color: white;
-    color: black;
+    color: #6d6e71;
 }
 
 .dialogsItems {
@@ -11,9 +11,19 @@
     cursor: pointer;
 }
 
+.dialogsItems img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+    margin: 0;
+}
+
 .dialogs a {
     text-decoration: none;
-    color: blue!important;
+    color:#27aae1!important;
+    margin-left: 20px;
 }
 
 .dialog {
@@ -23,21 +33,19 @@
 }
 
 .numbers {
-    background-color:red;
+    background-color: #ff0000;
     opacity: 0.8;
     border-radius: 30%;
     border: white 1px solid;
-    min-width: 15px;
+    min-width: 20px;
     height: 20px;
     display: block;
     float: right;
-    /* color: white; */
     text-align: center;
     color: white;
 }
 
 .dialog:hover {
-    /* text-decoration: none; */
     border-bottom:green 1px solid;
 }
 
@@ -46,7 +54,6 @@
 .dialogsItems .active {
     border-bottom: white 1px solid;
     color: grey;
-    /* text-decoration: underline white ; */
 }
 
 .dialog .active {
@@ -56,3 +63,88 @@
 .messages {
     padding: 15px;
 }
+
+.messages .chat {
+    border: 2px solid #dedede;
+    background-color: #f3f9eb;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.messages .chatDark {
+    border-color: #ccc;
+    background-color: #e9f6fc;
+
+}
+
+/* Clear floats */
+.chat::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+ .messages .imgleft {
+    float: left;
+    width: 60px;
+    border-radius: 50%;
+
+}
+
+.messages .imgright {
+    float: right;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.timeLeft {
+    float: left;
+    color: #999;
+
+}
+
+.timeRight {
+    float: right;
+    color: #aaa;
+    
+}
+
+/* ----sendBtn---- */
+
+.sendArea {
+    width: 400px;
+    height: 30px;
+    float: right;
+}
+
+.postmessage {
+    width: 70%;
+    height: 100%;
+    border: 1px #f1f2f2 solid;
+    transition-delay: 0.1s;
+}
+
+.postmessage:focus {
+    
+    outline:none;
+    border: #66afe9 solid 1px;
+    box-shadow: 0 0 15px #66afe9;
+    border-radius: 3px;
+}
+
+.btn {
+    width: 20%;
+    height: 120%;
+    text-decoration: none;
+    border-radius: none;
+    color: white;
+    background-color: black;
+}
+
+.btn:active {
+    background-color: grey;
+    border: 5px solid white;
+    color: black;
+}
+

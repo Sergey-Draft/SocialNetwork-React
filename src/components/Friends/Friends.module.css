@@ -1,0 +1,55 @@
+.friends {
+    margin-top: 50px;
+}
+
+.title {
+    margin-bottom: 20px;
+    text-align: center;
+    vertical-align: middle;
+    height: 40px;
+    color: White;
+    background-color: #8dc63f;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.text {
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.friendsItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+}
+
+
+
+.friendsItems .item {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.item .indicator {
+    position: absolute;
+    left: 23px;
+    bottom: -7px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: #29a242;
+}
+
+.item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
