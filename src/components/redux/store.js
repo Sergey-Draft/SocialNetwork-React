@@ -14,7 +14,7 @@ let store = {
       ],
       newUserId: '1',
       messages: [
-        { id: 1, message: "Hello, How are you today?"},
+        { id: 1, message: "Hello, How are you today?" },
         { id: 2, message: "I am ok! And you?" },
         { id: 3, message: "So, what do you wanna do today?" },
         { id: 4, message: "Nah, I dunno. Play soccer.. or learn more coding perhaps.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
@@ -40,7 +40,6 @@ let store = {
         { id: 3, imgurl: "https://st3.depositphotos.com/1432405/19346/v/950/depositphotos_193462432-stock-illustration-businessman-icon-flat-style.jpg" },
         { id: 4, imgurl: "https://st3.depositphotos.com/1432405/19346/v/950/depositphotos_193462432-stock-illustration-businessman-icon-flat-style.jpg" },
         { id: 5, imgurl: "https://st3.depositphotos.com/1432405/19346/v/950/depositphotos_193462432-stock-illustration-businessman-icon-flat-style.jpg" }
-
       ]
     }
   },
@@ -51,6 +50,7 @@ let store = {
   subscribe(observer) {
     this._callSubscriber = observer;
   },
+
   getState() {
     return this._state;
   },
@@ -61,7 +61,7 @@ let store = {
     this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
     this._state.sideBar = sideBarReducer(this._state.sideBar, action);
 
-      this._callSubscriber(this._state);
+    this._callSubscriber(this._state);
   }
 
 }
