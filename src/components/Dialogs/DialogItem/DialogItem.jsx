@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { UpdateNewUserIdCreator } from '../../redux/dialogsReducer';
 import s from './../Dialogs.module.css'
 
 const DialogItem = (props) => {
@@ -8,7 +7,7 @@ const DialogItem = (props) => {
 
     const NewUserIdUpdate = () => {
         let newId = props.id;
-        props.store.dispatch(UpdateNewUserIdCreator(newId))
+        props.NewUserIdUpdate(newId)
     }
 
     return (
