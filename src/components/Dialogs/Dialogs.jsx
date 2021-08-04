@@ -7,7 +7,7 @@ import Message from './Message/Message';
 const Dialogs = (props) => {
     let state = props.dialogsPage;
 
-    let dialogsData = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} imgurl={d.imgurl} NewUserIdUpdate={props.NewUserIdUpdate} />)
+    let dialogsData = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} key={d.id} imgurl={d.imgurl} NewUserIdUpdate={props.NewUserIdUpdate} />)
     /* let messagesData = props.state.messages.map(m => <Message message={m.message} id={m.id} />) */
 
     let NewMessageObj = React.createRef()
@@ -25,7 +25,7 @@ const Dialogs = (props) => {
 
 
     let messages = state.messages/* .filter(item => item.id === props.store.getState().dialogsPage.newUserId ) */
-        .map(item => <Message message={item} id={item.id} />)
+        .map(item => <Message message={item} key={item.id} id={item.id} />)
 
     return (
         <div className={s.dialogs}>

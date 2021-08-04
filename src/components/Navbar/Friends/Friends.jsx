@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import s from './Friends.module.css';
 
 const Friends = (props) => {
-   let friends = props.state.friends.map(el => {
+   let friends = props.state.friends.map(el => { 
       return (
          
          <div className={s.item}>

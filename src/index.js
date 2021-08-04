@@ -10,13 +10,13 @@ import { Provider } from 'react-redux';
 let rerenderEntireTree = () => {
   ReactDOM.render(
     <BrowserRouter>
-      <React.StrictMode>
+
         <Provider store={store}>
 
           <App/>
 
         </Provider>
-      </React.StrictMode>
+
     </BrowserRouter>,
     document.getElementById('root')
   );

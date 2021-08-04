@@ -2,6 +2,7 @@
   grid-area: n;
   background-color: white;
   font-size: 24px;
+  min-width: 200px;
   
 }
 
