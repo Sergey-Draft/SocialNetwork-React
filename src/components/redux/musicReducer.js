@@ -6,14 +6,13 @@ const SET_TRACK_LIST = 'SET_TRACK_LIST'
 let initialState = {
     genre: [],
     tracklist: [],
-    currentRadioLink: '',
+    currentRadioLink: 'https://cdns-preview-1.dzcdn.net/stream/c-179bee1bfc65440d7df06d2246209699-4.mp3',
     tracklistURL: 'https://api.deezer.com/radio/37151/tracks'
 }
 
 
 
 const musicReducer = (state = initialState, action) => {
-
     switch (action.type) {
         case SET_GENRE:
             return {
@@ -44,7 +43,7 @@ const musicReducer = (state = initialState, action) => {
 }
 
 export const setMusicAC = (genre) => ({ type: SET_GENRE, genre })
-export const currentRadioLinkAC = (link) => ({ type: RADIO_LINK, link })
+export const setCurrentRadioLinkAC = (link) => ({ type: RADIO_LINK, link })
 export const trackListURLAC = (tracklistURL) => ({ type: TRACK_LIST_URL, tracklistURL })
 export const trackListAC = (tracklist) => ({ type: SET_TRACK_LIST, tracklist })
 

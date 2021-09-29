@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import s from './Music.module.css';
-import { currentRadioLinkAC, setMusicAC, trackListAC, trackListURLAC } from '../redux/musicReducer';
+import { setCurrentRadioLinkAC, setMusicAC, trackListAC, trackListURLAC } from '../redux/musicReducer';
 import MusicC from './MusicC';
 
 let mapStateToProps = (state) => {
@@ -18,8 +18,8 @@ let mapDispatchToProps = (dispatch) => {
         setGenre: (genre) => {
             dispatch(setMusicAC(genre))
         },
-        currentRadioLink: (link) => {
-            dispatch(currentRadioLinkAC(link))
+        setCurrentRadioLink: (link) => {
+            dispatch(setCurrentRadioLinkAC(link))
         },
         setTrackListURL: (tracklistURL) => {
             dispatch(trackListURLAC(tracklistURL))

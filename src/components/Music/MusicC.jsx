@@ -21,14 +21,7 @@ class MusicC extends React.Component {
           this.props.setGenre(response.data.data)
         })
     }
-  }
 
-  componentDidUpdate() {
-    <ReactAudioPlayer
-      src={this.props.currentRadioLink}
-      autoPlay
-      controls
-    />
   }
 
 
@@ -44,31 +37,33 @@ class MusicC extends React.Component {
   }
 
 
-  currentLinkToState = (param) => {
-    this.props.currentRadioLink(param)
+  setCurrentLinkToState = (param) => {
+    this.props.setCurrentRadioLink(param)
   }
 
 
 
   render() {
     return (
+
       <div>
         <p>Music</p>
-        <ReactAudioPlayer
-          src={this.props.currentRadioLink}
-          autoPlay
-          controls
-          onAbort
-        />
-
+     {  this.props.currentRadioLink?
+      <ReactAudioPlayer
+      src={this.props.currentRadioLink}
+      autoPlay
+      controls
+      
+    />: null
+     }
         <div className={s.play__list__wrapper}>
           <div className={s.play__list}>
             <div className={s.play__items}>
 
-              {this.props.genre.slice(0, 6).map(g => {
+              {this.props.genre.slice(0, 9).map(g => {
                 return (
 
-                  <div className={s.item} onClick={() => { this.getTrackListURL(g.tracklist); { this.getTrackList() } }}  >
+                  <div className={s.item} onClick={() => { this.getTrackListURL(g.tracklist); {this.getTrackList()} }}  >
                     <div className={s.content__item} >
                       <a className={s.current__playlist} href="#">
                         <div className={s.lable}>
@@ -89,13 +84,13 @@ class MusicC extends React.Component {
         {this.props.tracklist.slice(0, 10).map(tr => {
           return (
             <div className={s.tracklist}>
-              <div className={s.trackTitle} onClick={() => { this.currentLinkToState(tr.preview)}}>{tr.title}</div>
+              <div className={s.trackTitle} onClick={() => { this.setCurrentLinkToState(tr.preview)}}>{tr.title}</div>
               <div className={s.playerComp}>
-                <ReactAudioPlayer
+{/* {                <ReactAudioPlayer
                   src={this.props.currentRadioLink}
                   autoPlay
                   controls
-                />
+                />} */}
               </div>
               <div className={s.trackName} >{tr.artist.name}</div>
               <div></div>
@@ -114,19 +109,3 @@ class MusicC extends React.Component {
 
 export default MusicC;
 
-
-/*       <div className='player-wrapper'>
-        <ReactPlayer
-          className='react-player'
-          url='https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8'
-          width='100%'
-          height='100%'
-        />
-      </div>
-
-      <ReactAudioPlayer
-        src="https://pub0301.101.ru:8443/stream/air/mp3/256/219"
-        autoPlay
-        controls
-      />
- */
