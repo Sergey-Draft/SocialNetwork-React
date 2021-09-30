@@ -2,7 +2,7 @@ const SET_DATA = 'SET_DATA'
 
 
 let initialState = {
-    dataNews: [1]
+    dataNews: null
 }
 
 
@@ -14,7 +14,7 @@ const newsReducer = (state = initialState, action) => {
         case SET_DATA:
             return {
                 ...state,
-                dataNews: [...action.dataNews]
+                dataNews: action.dataNews
             }
 
         default:
