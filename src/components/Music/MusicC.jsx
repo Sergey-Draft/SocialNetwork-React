@@ -16,7 +16,12 @@ class MusicC extends React.Component {
 
   componentDidMount() {
     if (this.props.genre.length === 0) {
-      axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/radio')
+      axios.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/radio', {
+        headers: {
+          'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com',
+          'x-rapidapi-key': 'e7029884d4msh9ffb9181fd2d821p1c553ajsn7e425776caab'
+        }
+      })
         .then(response => {
           this.props.setGenre(response.data.data)
         })

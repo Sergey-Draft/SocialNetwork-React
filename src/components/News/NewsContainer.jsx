@@ -10,7 +10,7 @@ class NewsContainer extends React.Component {
   }
 
     componentDidMount = () =>{
-        axios.get('https://newsapi.org/v2/everything?q=tesla&from=2021-09-10&sortBy=publishedAt&apiKey=bb82a5810e234f13b51b63d3bc4d52ba')
+        axios.get('https://newsapi.org/v2/everything?q=tesla&from=2021-10-10&sortBy=publishedAt&apiKey=bb82a5810e234f13b51b63d3bc4d52ba')
         .then(response => 
             {this.props.setNewData(response.data.articles.slice(0,1))})
 
