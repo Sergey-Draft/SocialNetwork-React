@@ -5,22 +5,21 @@ import { setDataAC } from '../redux/newsReducer';
 import News from './News';
 
 class NewsContainer extends React.Component {
-  constructor(props){
+  constructor(props) {
     super()
   }
 
-    componentDidMount = () =>{
-        axios.get('https://newsapi.org/v2/everything?q=tesla&from=2021-10-10&sortBy=publishedAt&apiKey=bb82a5810e234f13b51b63d3bc4d52ba')
-        .then(response => 
-            {this.props.setNewData(response.data.articles.slice(0,1))})
+  componentDidMount = () => {
+    axios.get('https://api.punkapi.com/v2/beers')
+      .then(response => { this.props.setNewData(response.data.slice(0, 10)) })
+  }
 
-    }
+  render() {
 
-  render(){
-    
-    return<>
-      <News dataNews={this.props.dataNews} setNewData={this.props.setNewData}/>
-      </>
+    return <>
+    ver 2
+      <News dataNews={this.props.dataNews} /* setNewData={this.props.setNewData} */ />
+    </>
   }
 }
 
@@ -36,7 +35,7 @@ let mapDispatchToProps = (dispatch) => {
     setNewData: (dataNews) => {
       dispatch(setDataAC(dataNews))
     }
-}
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsContainer)

@@ -6,3 +6,18 @@
 .header img {
   height: 60px;
 }
+
+.login {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  float: right;
+  margin: 15px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.login a:link, a:active, a:visited {
+  text-decoration: none;
+  color: #fff;
+}

@@ -35,7 +35,7 @@ class ProfileContainer extends React.Component {
     }
     axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId, {
       headers: {
-        "API_KEY" : "107e3009-e5ca-4f45-88c2-81939c530753"
+        "API-KEY" : "107e3009-e5ca-4f45-88c2-81939c530753"
       }
     })
       .then(response => {

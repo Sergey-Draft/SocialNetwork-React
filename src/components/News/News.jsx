@@ -7,11 +7,20 @@ const News = (props) =>{
     if(!props.dataNews){
         return <Preloader/>
     }
+
+
         return(
             <div>
-                
-                <a href={props.dataNews[0].url}>{props.dataNews[0].title}</a>
-                <img src={props.dataNews[0].urlToImage} alt='title' style={{height:'200px', width:'200px' }}/>
+                {props.dataNews.map(i => {
+                    return (
+                        <div key={i.id}>
+                <div>{i.name}</div>
+                <img src={i.image_url} alt='title' style={{height:'300px', width:'150px' }}/>
+                <div>{i.brewers_tips} </div>
+                        </div>
+                    )
+                })}
+
             </div>
         )
 }
@@ -19,4 +28,3 @@ const News = (props) =>{
 export default News;
 
 
-/* {!this.props.dataNews ? <Preloader/>  : null } */

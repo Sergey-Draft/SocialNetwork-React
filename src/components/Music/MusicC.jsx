@@ -65,7 +65,7 @@ class MusicC extends React.Component {
           <div className={s.play__list}>
             <div className={s.play__items}>
 
-              {this.props.genre.slice(0, 9).map(g => {
+              {this.props.genre.slice(0, 3).map(g => {
                 return (
 
                   <div className={s.item} onClick={() => { this.getTrackListURL(g.tracklist); {this.getTrackList()} }}  >
@@ -91,11 +91,6 @@ class MusicC extends React.Component {
             <div className={s.tracklist}>
               <div className={s.trackTitle} onClick={() => { this.setCurrentLinkToState(tr.preview)}}>{tr.title}</div>
               <div className={s.playerComp}>
-{/* {                <ReactAudioPlayer
-                  src={this.props.currentRadioLink}
-                  autoPlay
-                  controls
-                />} */}
               </div>
               <div className={s.trackName} >{tr.artist.name}</div>
               <div></div>

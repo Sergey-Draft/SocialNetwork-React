@@ -2,8 +2,7 @@ import React from 'react';
 import { Route } from 'react-router';
 import './App.css';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Header from './components/Header/Header.jsx';
-import Music from './components/Music/MusicC';
+import HeaderContainer from './components/Header/HeaderContainer';
 import MusicContainer from './components/Music/MusicContainer';
 import Navbar from './components/Navbar/Navbar.jsx';
 import NewsContainer from './components/News/NewsContainer';
@@ -15,7 +14,7 @@ const App = (props) => {
 
   return (
     <div className='app-wrapper'>
-      <Header />
+      <HeaderContainer />
       <Navbar />
       <div className='app-wrapper-content'>
         <Route path='/profile/:userId?'>
