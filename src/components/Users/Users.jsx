@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Users.module.css';
 import noPict from '../../img/noavatar.png'
 import { NavLink } from 'react-router-dom';
+import { usersAPI } from '../../api/api';
 
 
 
@@ -26,20 +27,37 @@ const Users = (props) => {
         {props.users.map(u => {
           return (
             <div className={s.item} key={u.id}>
-               <NavLink to ={'/profile/'+u.id}>
-              <div className={s.img}></div>
+              <NavLink to={'/profile/' + u.id}>
+                <div className={s.img}></div>
               </NavLink>
-                <div className={s.info}>
-                  <img src={u.photos.small === null ? noPict : u.photos.small} alt='avatar' className={s.avatar} />
-                  
-                  {u.followed
-                    ? <span className={s.btn} onClick={() => { props.toggleFollow(u.id) }}>Follow</span>
-                    : <span className={s.btn} onClick={() => { props.toggleFollow(u.id) }}>UnFollow</span>}
+              <div className={s.info}>
+                <img src={u.photos.small === null ? noPict : u.photos.small} alt='avatar' className={s.avatar} />
 
-                  <p className={s.fullName}>{u.name}</p>
-                  <p className={s.userStatus}>{u.status}</p>
-                  <p className={s.userLocation}>Minsk City</p>
-                </div>
+                {u.followed
+                  ? <span className={s.btn} onClick={() => {
+                    usersAPI.unfollowUser(u.id)
+                      .then(response => {
+                        if (response.data.resultCode === 0) {
+                          props.toggleFollow(u.id)
+                        };
+                      })
+                  }
+                  }>Follow</span>
+
+                  : <span className={s.btn} onClick={() => {
+                    usersAPI.followUser(u.id)
+                      .then(response => {
+                        if (response.data.resultCode === 0) {
+                          props.toggleFollow(u.id)
+                        };
+                      })
+                  }
+                  }>UnFollow</span>}
+
+                <p className={s.fullName}>{u.name}</p>
+                <p className={s.userStatus}>{u.status}</p>
+                <p className={s.userLocation}>Minsk City</p>
+              </div>
 
 
             </div>
@@ -48,7 +66,7 @@ const Users = (props) => {
 
 
       </div>
-    </div>
+    </div >
 
   )
 }
