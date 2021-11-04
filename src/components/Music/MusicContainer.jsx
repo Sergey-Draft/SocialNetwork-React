@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import s from './Music.module.css';
-import { setCurrentRadioLinkAC, setMusicAC, trackListAC, trackListURLAC } from '../redux/musicReducer';
+import { setCurrentRadioLinkAC, setMusicAC, trackListAC, trackListURLAC, setVideoIDAC } from '../redux/musicReducer';
 import MusicC from './MusicC';
 
 let mapStateToProps = (state) => {
@@ -9,7 +9,8 @@ let mapStateToProps = (state) => {
         genre: state.musicPage.genre,
         currentRadioLink: state.musicPage.currentRadioLink,
         tracklistURL: state.musicPage.tracklistURL,
-        tracklist: state.musicPage.tracklist
+        tracklist: state.musicPage.tracklist,
+        videoID: state.musicPage.videoID
     }
 }
 
@@ -26,6 +27,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         setTrackList: (tracklist) => {
             dispatch(trackListAC(tracklist))
+        },
+        setVideoID: (videoID) => {
+            dispatch(setVideoIDAC(videoID))
         }
     }
 }

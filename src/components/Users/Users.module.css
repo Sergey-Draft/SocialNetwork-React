@@ -50,6 +50,9 @@
   margin: 20px 0;
   color:#8dc63f;
   width: 70px;
+/*   outline: none;
+  border: 0;
+  background: transparent */
 }
 
 .btn:hover {

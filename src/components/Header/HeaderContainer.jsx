@@ -26,9 +26,15 @@ class HeaderContainer extends React.Component {
 /*     axios.put(`https://social-network.samuraijs.com/api/1.0/profile/photo`, {
       withCredentials: true,
       data: {
-        large: myPhoto
+        large: "https://yandex.by/images/search?pos=3&img_url=https%3A%2F%2Fcdnb.artstation.com%2Fp%2Fassets%2Fimages%2Fimages%2F008%2F802%2F747%2Flarge%2Fanton-chernoskutov-5.jpg%3F1515414305&text=аватарки&lr=157&rpt=simage&source=wiz"
+      },
+    },{
+      headers: {
+        "API-KEY" : "107e3009-e5ca-4f45-88c2-81939c530753"
       }
-    })
+    }
+
+    )
       .then(response => {
         console.log(response);
       })

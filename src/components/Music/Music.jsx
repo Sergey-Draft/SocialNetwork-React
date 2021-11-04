@@ -1,127 +1,75 @@
 import React from 'react';
-import s from './Music.module.css';
-import './slider.css';
-import ReactPlayer from 'react-player';
-import ReactAudioPlayer from 'react-audio-player';
-import pic from '../../img/slider/5eb63513bf879image.jpg';
-import pic2 from '../../img/slider/WhatsGoodnewsimage.jpg';
-import pic3 from '../../img/slider/best-dance-clubs-lisbon-portugal.jpg';
-import pic4 from '../../img/slider/5eb63513bf879image.jpg';
-import pic5 from '../../img/slider/5eb63513bf879image.jpg';
+import f from './MusicFunctional.module.css';
+
 import { useState, useEffect } from 'react';
+import { searchYouTube } from '../../api/api';
+import { NavLink } from 'react-router-dom';
+import YouTube from 'react-youtube';
 
-const Music = () => {
+const Music = (props) => {
+  const [query, setQuery] = useState('European history');
+  const [list, setList] = useState(null);
+  const search = (e) => {
+    e.preventDefault();
+    searchYouTube(query).then(setList);
+  };
 
-  let playList = "https://www.youtube.com/playlist?list=LL8J3iUbOyyzMyIDXhx9q9OA";
-  <script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/youtube.xml&up_channel=UC8J3iUbOyyzMyIDXhx9q9OA&synd=open&w=320&h=390&title=&border=%23ffffff%7C3px%2C1px+solid+%23999999&output=js"></script>
 
-  
-  
-
-
-
+  const onReady = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  }
   return (
-    <div>
-      <div>Music</div>
-      <iframe id="player" type="text/html" width="640" height="360"
-        src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
-        frameborder="0"></iframe>
-
-
-      <div className='player-wrapper'>
-        <ReactPlayer
-          className='react-player'
-          url='https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8'
-          width='100%'
-          height='100%'
-        />
-      </div>
-
-      <ReactAudioPlayer
-        src="https://pub0301.101.ru:8443/stream/air/mp3/256/219"
-        autoPlay
-        controls
-      />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/*         <div class="main__wrapper">
-          <div class="row">
-            <div class="col s12 items__slider">
-              <div class="all__items" style={{ width: 12000 + 'px', transform: translate3d(-430+'px', 0+'px', 0+'px') }}>
-
-                <div class="item__photo prev__item" data-item-photo="-1">
-                  <img src={pic} alt="photo1" />
-                </div>
-                <div class="item__photo active__item" data-item-photo="0">
-                  <img src={pic2} alt="photo3" />
-                </div>
-                <div class="item__photo next__item" data-item-photo="1">
-                  <img src={pic3} alt="photo2" />
-                </div>
-                <div class="item__photo" data-item-photo="2">
-                  <img src="./images/underground2.jpg" alt="photo4" />
-                </div>
-                <div class="item__photo" data-item-photo="3">
-                  <img src="./images/How-to-Make-a-Good-Spotify-Playlist-e1559562327608.jpeg" alt="photo5" />
-                </div>
-                <div class="item__photo " data-item-photo="4">
-                  <img src="./images/5eb63513bf879image.jpg" alt="photo1" />
-                </div>
-                <div class="item__photo " data-item-photo="5">
-                  <img src="./images/WhatsGoodnewsimage.jpg" alt="photo3" />
-                </div>
-                <div class="item__photo " data-item-photo="6">
-                  <img src="./images/best-dance-clubs-lisbon-portugal.jpg" alt="photo2" />
-                </div>
-                <div class="item__photo" data-item-photo="7">
-                  <img src="./images/underground2.jpg" alt="photo4" />
-                </div>
-                <div class="item__photo" data-item-photo="8">
-                  <img src="./images/How-to-Make-a-Good-Spotify-Playlist-e1559562327608.jpeg" alt="photo5" />
-                </div>
-
-              </div>
-              This div is 12-columns wide on all screen sizes
-                    <ul class="items__button">
-                        <li class="dot__item dot__active">
-                            <button>1</button>
-                        </li>
-                        <li class="dot__item ">
-                            <button>1</button>
-                        </li>
-                        <li class="dot__item">
-                            <button>1</button>
-                        </li>
-                        <li class="dot__item">
-                            <button>1</button>
-                        </li>
-                        <li class="dot__item">
-                            <button>1</button>
-                        </li>
+    <div className={f.ap}>
+      <form onSubmit={search} className={f.form}>
+        <input className={f.input} autoFocus value={query} onChange={e => setQuery(e.target.value)} />
+        <button className={f.button}>Search YouTube</button>
+      </form>
+      {list &&
+        (list.length === 0
+          ? <p>No results</p>
+          : (
+            <ul className={f.items}>
+              {list.map(item => (
+                <>
+                  <li className={f.item} key={item.id}>
+                    <div>
+                      <b onClick={() => { props.setVideoID(item.id) }} ><a href={item.link}>{item.title}</a></b>
+                      <p>react-youtube Features Installation Usage Example Controlling the player License. README.md. react-youtube. Simple React component acting as a thin layer over the YouTube IFrame Player API. Features. url playback. ... The API component will pass an event object as the sole argument to each of those functions the event handler props. The event object has the following properties: The event's target identifies the video player that corresponds to the even </p>
+                    </div>
+                    <ul className={f.meta}>
+                      <li>By: <a href={item.author.ref}>{item.author.name}</a></li>
+                      <li>Views: {item.views}</li>
+                      <li>Duration: {item.duration}</li>
+                      <li>Uploaded: {item.uploadedAt}</li>
                     </ul>
-            </div>
+                    <img alt="title_img" src={item.bestThumbnail.url} />
 
-          </div>
 
-        </div> */}
+                  </li>
+                  
+                  {props.videoID === item.id ? 
+                  <div className={f.videoBlock}>
+                  <div className={f.videoPlayer}><YouTube videoId={props.videoID} opts={{ height: '390', width: '640' }} onReady={onReady} /> </div>
+                  <span className={f.closeVideo} onClick={() => {props.setVideoID(null)}}>X</span> 
+                  </div>
+                  : null}
+                  
+
+                </>
+              )
+              )}
+            </ul>
+          )
+        )
+      }
 
 
     </div>
-  )
+
+
+
+  );
 }
 
 export default Music;

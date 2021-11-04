@@ -1,13 +1,16 @@
 const SET_GENRE = 'SET_GENRE';
 const RADIO_LINK = 'RADIO_LINK';
 const TRACK_LIST_URL = 'TRACK_LIST_URL';
-const SET_TRACK_LIST = 'SET_TRACK_LIST'
+const SET_TRACK_LIST = 'SET_TRACK_LIST';
+const SET_VIDEO_ID = 'SET_VIDEO_ID';
 
 let initialState = {
     genre: [],
     tracklist: [],
-    currentRadioLink: 'https://cdns-preview-1.dzcdn.net/stream/c-179bee1bfc65440d7df06d2246209699-4.mp3',
-    tracklistURL: 'https://api.deezer.com/radio/37151/tracks'
+    currentRadioLink: null,
+    tracklistURL: 'https://api.deezer.com/radio/37151/tracks',
+    videoID: null
+
 }
 
 
@@ -36,6 +39,11 @@ const musicReducer = (state = initialState, action) => {
                 ...state,
                 tracklist: [...action.tracklist]
             }
+            case SET_VIDEO_ID:
+                return {
+                    ...state,
+                    videoID: action.videoID
+                }
         default:
             return state;
 
@@ -46,6 +54,8 @@ export const setMusicAC = (genre) => ({ type: SET_GENRE, genre })
 export const setCurrentRadioLinkAC = (link) => ({ type: RADIO_LINK, link })
 export const trackListURLAC = (tracklistURL) => ({ type: TRACK_LIST_URL, tracklistURL })
 export const trackListAC = (tracklist) => ({ type: SET_TRACK_LIST, tracklist })
+export const setVideoIDAC = (videoID) => ({ type: SET_VIDEO_ID, videoID })
+
 
 export default musicReducer;
 

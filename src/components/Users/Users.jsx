@@ -34,25 +34,29 @@ const Users = (props) => {
                 <img src={u.photos.small === null ? noPict : u.photos.small} alt='avatar' className={s.avatar} />
 
                 {u.followed
-                  ? <span className={s.btn} onClick={() => {
+                  ? <button disabled={props.followingInProgress} className={s.btn} onClick={() => {
+                    props.toggleFollowingProgress(true);
                     usersAPI.unfollowUser(u.id)
                       .then(response => {
                         if (response.data.resultCode === 0) {
                           props.toggleFollow(u.id)
                         };
+                        props.toggleFollowingProgress(false)
                       })
                   }
-                  }>Follow</span>
+                  }>Follow</button>
 
-                  : <span className={s.btn} onClick={() => {
+                  : <button disabled={props.followingInProgress} className={s.btn} onClick={() => {
+                    props.toggleFollowingProgress(true)
                     usersAPI.followUser(u.id)
                       .then(response => {
                         if (response.data.resultCode === 0) {
                           props.toggleFollow(u.id)
                         };
+                        props.toggleFollowingProgress(false)
                       })
                   }
-                  }>UnFollow</span>}
+                  }>UnFollow</button>}
 
                 <p className={s.fullName}>{u.name}</p>
                 <p className={s.userStatus}>{u.status}</p>
