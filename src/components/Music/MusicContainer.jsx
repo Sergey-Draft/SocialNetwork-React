@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import s from './Music.module.css';
 import { setCurrentRadioLinkAC, setMusicAC, trackListAC, trackListURLAC, setVideoIDAC } from '../redux/musicReducer';
-import MusicC from './MusicC';
+import MusicClass from './MusicClass';
 
 let mapStateToProps = (state) => {
     return {
@@ -35,6 +34,6 @@ let mapDispatchToProps = (dispatch) => {
 }
 
 
-const musicContainer = connect(mapStateToProps, mapDispatchToProps)(MusicC)
+const musicContainer = connect(mapStateToProps, mapDispatchToProps)(MusicClass)
 
 export default musicContainer;

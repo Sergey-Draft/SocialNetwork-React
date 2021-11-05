@@ -1,15 +1,14 @@
 import React from 'react';
 import s from './Music.module.css';
-import ReactPlayer from 'react-player';
 import ReactAudioPlayer from 'react-audio-player';
 import axios from 'axios';
-import Music from './Music';
+import MusicFunctional from './MusicFunctional';
 
 
 
 
 
-class MusicC extends React.Component {
+class MusicClass extends React.Component {
   constructor(props) {
     super()
   }
@@ -34,23 +33,6 @@ class MusicC extends React.Component {
     }
 
     )
-
-
-
-
-
-/*     if (this.props.genre.length === 0) {
-      axios.get('https://deezerdevs-deezer.p.rapidapi.com/radio/37151', {
-        headers: {
-          'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com',
-          'x-rapidapi-key': 'e7029884d4msh9ffb9181fd2d821p1c553ajsn7e425776caab'
-        }
-      })
-        .then(response => {
-          console.log(response.data)
-          this.props.setGenre(response.data)
-        })
-    } */
 
   }
 
@@ -125,7 +107,7 @@ class MusicC extends React.Component {
           )
         })} */}
 
-<Music setVideoID={this.props.setVideoID} videoID={this.props.videoID} />
+<MusicFunctional setVideoID={this.props.setVideoID} videoID={this.props.videoID} />
 
       </div>
 
@@ -139,5 +121,5 @@ class MusicC extends React.Component {
 
 }
 
-export default MusicC;
+export default MusicClass;
 

@@ -9,6 +9,7 @@ import NewsContainer from './components/News/NewsContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import Settings from './components/Settings/Setting';
 import UsersContainer from './components/Users/UsersContainer';
+import 'font-awesome/css/font-awesome.min.css';
 
 const App = (props) => {
 

@@ -1,10 +1,8 @@
-body {
-  background: #f7f7f7;
+.videoWrapper{}
+.header{
+  margin: 100px 50px;
 }
-.ap {
-  width: 36em;
-  margin: 3em;
-}
+
 .form {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -20,6 +18,9 @@ body {
   outline: none;
   padding: 0.5em 1.5em;
 }
+.button:hover{
+  cursor: pointer;
+}
 .button:active { background-color: #05b; }
 .input {
   border: 1px solid #999;
@@ -29,6 +30,95 @@ body {
   outline: none;
 }
 .input:focus { outline: auto #17f; }
+
+.searchWrapper{}
+
+.videoItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.videoItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-radius: 6px;
+  box-shadow: 0px 1px 6px 2px #0002;
+  transition: transform 100ms ease-in-out;
+  background-color: rgb(243, 240, 240);
+  margin-bottom: 20px;
+  cursor: pointer;
+
+}
+
+.videoItem:hover {
+  transform: scale(1.02);
+}
+
+.videoImg {
+  width: 20%;
+  height: auto;
+}
+
+.videoDescription {
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 2; */
+}
+
+.videoName {
+  margin-bottom: 5px;
+  font-weight: 900;
+  padding-left: 20px;
+}
+
+.videoDetails {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 25px;
+  align-items: baseline;
+}
+
+.videoDetails div{
+  width: 35%;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.videoBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.videoPlayer {
+  width: 50%;
+  height: auto;
+}
+
+.closeVideo span{
+  margin-left: 30px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #17f ;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ul {
   list-style-type: none;
   padding-left: 0;
