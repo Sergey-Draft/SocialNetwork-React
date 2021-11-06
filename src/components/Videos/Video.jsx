@@ -1,14 +1,18 @@
 import React from 'react';
-import f from './MusicFunctional.module.css';
+import f from './Video.module.css';
 
 import { useState } from 'react';
 import { searchYouTube } from '../../api/api';
 import YouTube from 'react-youtube';
 
-const MusicFunctional = (props) => {
+import { FaReact } from 'react-icons/fa';
+import { IoLogoJavascript } from 'react-icons/io'
+
+const Video = (props) => {
 
   const [query, setQuery] = useState('музыка 2021');
   const [list, setList] = useState(null);
+  
   const search = (e) => {
     e.preventDefault();
     searchYouTube(query).then(setList);
@@ -23,8 +27,12 @@ const MusicFunctional = (props) => {
   return (
     <div className={f.videoWrapper}>
       <div className={f.header}>
-        <i className="fa fa-youtube fa-5x" style={{ color: 'red' }} aria-hidden="true"></i>
+        <span className="fa fa-youtube fa-5x" style={{ color: 'red' }} aria-hidden="true"></span>
+         <span className={f.reactIcon}  ><FaReact/></span>
+         <span className={f.javascriptIcon}  ><IoLogoJavascript/></span>    
       </div>
+
+       <div className={f.intro} >find and watch</div> 
 
       <div className={f.searchWrapper}>
         <form onSubmit={search} className={f.form}>
@@ -75,4 +83,7 @@ const MusicFunctional = (props) => {
   );
 }
 
-export default MusicFunctional;
+export default Video;
+
+
+

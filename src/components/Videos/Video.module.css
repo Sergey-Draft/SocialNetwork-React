@@ -1,6 +1,14 @@
 .videoWrapper{}
 .header{
-  margin: 100px 50px;
+  margin: 50px 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.intro{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .form {
@@ -31,11 +39,14 @@
 }
 .input:focus { outline: auto #17f; }
 
-.searchWrapper{}
+.searchWrapper{
+    margin: 0 20px;
+}
 
 .videoItems {
   display: flex;
   flex-direction: column;
+  margin: 0 20px;
 }
 
 .videoItem {
@@ -101,64 +112,17 @@
   margin-left: 30px;
   text-decoration: underline;
   cursor: pointer;
-  color: #17f ;
-  
+  color: #17f ; 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-.items {
-  display: grid;
-  gap: 1em;
-}
-.item {
-  background: #fff;
-  padding: 1em;
-  border-radius: 6px;
-  box-shadow: 0px 1px 6px 2px #0002;
-  transition: transform 100ms ease-in-out;
-  display: grid;
-  gap: 1em;
-  grid-template:
-    "d i"
-    "m m";
-}
-.item:hover { transform: scale(1.02); }
-.item div { grid-area: d; }
-.item img { grid-area: i; height: 50%; width: auto; } 
-.item ul  { grid-area: m; }
-.meta {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 2em;
-  font-size: 80%;
-  color: #555;
+.reactIcon {
+    color: #0cf;
+    font-size: 70px;
 }
 
-
-
-.videoPlayer{
-  display: inline-block;
-}
-
-.closeVideo {
-  display: inline-block;
-  float: right;
-  font-size: 24px;
+.javascriptIcon {
+    font-size: 70px;
+    background-color: #fc3;
+    color: #333;
 }

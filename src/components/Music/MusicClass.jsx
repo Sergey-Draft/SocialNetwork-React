@@ -2,9 +2,9 @@ import React from 'react';
 import s from './Music.module.css';
 import ReactAudioPlayer from 'react-audio-player';
 import axios from 'axios';
-import MusicFunctional from './MusicFunctional';
 
-
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 
 
@@ -19,20 +19,20 @@ class MusicClass extends React.Component {
     var options = {
       method: 'GET',
       url: 'https://radio-browser.p.rapidapi.com/json/stations',
-      params: {reverse: 'false', offset: '0', limit: '10', hidebroken: 'false'},
+      params: { reverse: 'false', offset: '0', limit: '10', hidebroken: 'false' },
       headers: {
         'x-rapidapi-host': 'radio-browser.p.rapidapi.com',
         'x-rapidapi-key': 'e7029884d4msh9ffb9181fd2d821p1c553ajsn7e425776caab'
       }
     };
-    
-    axios.request(options)
-    .then(response => {
-      console.log(response.data)
-      this.props.setGenre(response.data)
-    }
 
-    )
+    axios.request(options)
+      .then(response => {
+        console.log(response.data)
+        this.props.setGenre(response.data)
+      }
+
+      )
 
   }
 
@@ -55,46 +55,39 @@ class MusicClass extends React.Component {
 
 
 
+
+
+
   render() {
     return (
 
-      <div>
+
+
+      <div className={s.radioPage}>
         <p>Music</p>
-     {  this.props.currentRadioLink?
-      <ReactAudioPlayer
-      src={this.props.currentRadioLink}
-      autoPlay
-      controls
-      
-    />: null
-     }
+        {this.props.currentRadioLink ?
+          <ReactAudioPlayer
+            src={this.props.currentRadioLink}
+            autoPlay
+            controls
+
+          /> : null
+        }
         <div className={s.play__list__wrapper}>
-          <div className={s.play__list}>
-            <div className={s.play__items}>
+          {this.props.genre.slice(0, 6).map(g => {
+            return (
+              <div className={s.item} onClick={() => { /* this.getTrackListURL(g.tracklist); {this.getTrackList()}  */ this.setCurrentLinkToState(g.url) }}  >
 
-              {this.props.genre.slice(0, 6).map(g => {
-                return (
-
-                  <div className={s.item} onClick={() => { /* this.getTrackListURL(g.tracklist); {this.getTrackList()}  */ this.setCurrentLinkToState(g.url) }}  >
-                    <div className={s.content__item} >
-                      <a className={s.current__playlist} href="#">
-                        <div className={s.lable}>
-                          <img src={g.favicon} alt={g.id} />
-                        </div>
-                        <span className={s.title}>{g.name}</span>
-                      </a>
-                    </div>
-                    <span>{g.country}</span>
-                  </div>
-
-                )
-
-              })}
-            </div>
-          </div>
+                <img className={s.lable} src={g.favicon} alt={g.id} />
+                <div>
+                  <div className={s.title}>{g.name}</div>
+                </div>
+              </div>
+            )
+          })}
         </div>
 
-{/*         {this.props.tracklist.slice(0, 10).map(tr => {
+        {/*         {this.props.tracklist.slice(0, 10).map(tr => {
           return (
             <div className={s.tracklist}>
               <div className={s.trackTitle} onClick={() => { this.setCurrentLinkToState(tr.preview)}}>{tr.title}</div>
@@ -107,16 +100,16 @@ class MusicClass extends React.Component {
           )
         })} */}
 
-<MusicFunctional setVideoID={this.props.setVideoID} videoID={this.props.videoID} />
+
 
       </div>
 
 
-        
+
 
 
     )
-    
+
   }
 
 }
