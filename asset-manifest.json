@@ -1,19 +1,20 @@
 {
   "files": {
     "main.css": "/SocialNetwork-React/static/css/main.bb922054.chunk.css",
-    "main.js": "/SocialNetwork-React/static/js/main.265dc02b.chunk.js",
-    "main.js.map": "/SocialNetwork-React/static/js/main.265dc02b.chunk.js.map",
+    "main.js": "/SocialNetwork-React/static/js/main.4c5fe948.chunk.js",
+    "main.js.map": "/SocialNetwork-React/static/js/main.4c5fe948.chunk.js.map",
     "runtime-main.js": "/SocialNetwork-React/static/js/runtime-main.f150a8c5.js",
     "runtime-main.js.map": "/SocialNetwork-React/static/js/runtime-main.f150a8c5.js.map",
     "static/css/2.4ebf67d4.chunk.css": "/SocialNetwork-React/static/css/2.4ebf67d4.chunk.css",
-    "static/js/2.1f2a98d1.chunk.js": "/SocialNetwork-React/static/js/2.1f2a98d1.chunk.js",
-    "static/js/2.1f2a98d1.chunk.js.map": "/SocialNetwork-React/static/js/2.1f2a98d1.chunk.js.map",
+    "static/js/2.be2afb46.chunk.js": "/SocialNetwork-React/static/js/2.be2afb46.chunk.js",
+    "static/js/2.be2afb46.chunk.js.map": "/SocialNetwork-React/static/js/2.be2afb46.chunk.js.map",
     "static/js/3.6f76b2fb.chunk.js": "/SocialNetwork-React/static/js/3.6f76b2fb.chunk.js",
     "static/js/3.6f76b2fb.chunk.js.map": "/SocialNetwork-React/static/js/3.6f76b2fb.chunk.js.map",
     "index.html": "/SocialNetwork-React/index.html",
     "static/css/2.4ebf67d4.chunk.css.map": "/SocialNetwork-React/static/css/2.4ebf67d4.chunk.css.map",
     "static/css/main.bb922054.chunk.css.map": "/SocialNetwork-React/static/css/main.bb922054.chunk.css.map",
-    "static/js/2.1f2a98d1.chunk.js.LICENSE.txt": "/SocialNetwork-React/static/js/2.1f2a98d1.chunk.js.LICENSE.txt",
+    "static/js/2.be2afb46.chunk.js.LICENSE.txt": "/SocialNetwork-React/static/js/2.be2afb46.chunk.js.LICENSE.txt",
+    "static/media/45.864110ea.jpg": "/SocialNetwork-React/static/media/45.864110ea.jpg",
     "static/media/Users.module.css": "/SocialNetwork-React/static/media/fon.0a5732c1.jpg",
     "static/media/font-awesome.min.css": "/SocialNetwork-React/static/media/fontawesome-webfont.f691f37e.woff",
     "static/media/noavatar.c2c94b87.png": "/SocialNetwork-React/static/media/noavatar.c2c94b87.png",
@@ -25,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.f150a8c5.js",
     "static/css/2.4ebf67d4.chunk.css",
-    "static/js/2.1f2a98d1.chunk.js",
+    "static/js/2.be2afb46.chunk.js",
     "static/css/main.bb922054.chunk.css",
-    "static/js/main.265dc02b.chunk.js"
+    "static/js/main.4c5fe948.chunk.js"
   ]
 }
