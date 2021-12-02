@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import authReducer from "./authReducer";
 import dialogsReducer from "./dialogsReducer";
 import musicReducer from "./musicReducer";
@@ -7,6 +7,7 @@ import profileReducer from "./profileReducer";
 import sideBarReducer from "./sideBarReducer";
 import usersReducer from "./usersReducer";
 import videoReducer from "./videoReducer";
+import thunk from "redux-thunk";
 
 
 let reducers = combineReducers({
@@ -20,7 +21,7 @@ let reducers = combineReducers({
     videoPage: videoReducer 
 })
 
-let store = createStore(reducers);
+let store = createStore(reducers, applyMiddleware(thunk));
 
 window.store = store;
 

@@ -24,9 +24,11 @@ export const usersAPI = {
     followUser: (uid) => {
         return instance.post(`/follow/${uid}`)
     },
-
     authorization: () => {
         return instance.get('auth/me')
+    },
+    getProfile: (userId) => {
+        return instance.get(`/profile/${userId}`)
     }
 }
 
