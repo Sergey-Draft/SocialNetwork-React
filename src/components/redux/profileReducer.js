@@ -49,7 +49,7 @@ export const AddPostActionCreator = () => ({ type: ADD_POST })
 export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
 
-export const userProfileThunk =(userId) => {
+export const getuserProfileThunk =(userId) => {
     return (dispatch) => {
         usersAPI.getProfile(userId)
         .then(response => {

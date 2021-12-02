@@ -12,6 +12,7 @@ import UsersContainer from './components/Users/UsersContainer';
 import 'font-awesome/css/font-awesome.min.css';
 import VideoContainer from './components/Videos/VideoContainer';
 import Form from './components/Form/Form';
+import Login from './components/Login/Login';
 
 const App = (props) => {
 
@@ -30,6 +31,7 @@ const App = (props) => {
         <Route path='/settings' component={Settings} />
         {<Route path='/users' render={() => <UsersContainer />} />}
         <Route path='/form' render={() => <Form />} />
+        <Route path='/login' render={() => <Login />} />
 
 
       </div>
