@@ -1,5 +1,4 @@
 import React from 'react';
-import { IoMdAlert } from 'react-icons/io';
 import { Redirect } from 'react-router';
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css'

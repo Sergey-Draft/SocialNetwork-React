@@ -1,3 +1,4 @@
+import { searchYouTube } from "../../api/api";
 
 const SET_VIDEO_ID = 'SET_VIDEO_ID';
 
@@ -20,7 +21,7 @@ const videoReducer = (state = initialState, action ) => {
     }
 }
 
-export const setVideoIDAC = (videoID) => ({ type: SET_VIDEO_ID, videoID })
+export const setVideoIDAC = (videoID) => ({ type: SET_VIDEO_ID, videoID });
 
 
 export default videoReducer;
