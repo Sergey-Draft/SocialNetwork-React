@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router';
 import DialogItem from './DialogItem/DialogItem';
 import s from './Dialogs.module.css'
 import Message from './Message/Message';
@@ -26,9 +25,7 @@ const Dialogs = (props) => {
     let messages = state.messages/* .filter(item => item.id === props.store.getState().dialogsPage.newUserId ) */
         .map(item => <Message message={item} key={item.id} id={item.id} />)
 
-    if(!props.isAuth) {
-        return <Redirect to= {"/login"} />
-    }
+
 
 
     return (

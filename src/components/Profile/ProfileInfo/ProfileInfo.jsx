@@ -2,6 +2,7 @@ import React from 'react';
 import Preloader from '../../common/Preloader';
 import s from './ProfileInfo.module.css';
 import iAm from '../../../img/45.jpg';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -16,11 +17,14 @@ const ProfileInfo = (props) => {
       </div>
       <div className={s.descriptionBlock}>
 
-        <div className="intro">
-          {props.profile.userId === 19960 
-          ? <img src={iAm} alt='userPhoto' style={{width: '200px'}} />
-          :<img src={props.profile.photos.large} alt='userPhoto' />}
-          
+        <div className={s.intro}>
+          <div className={s.photo}>
+            {props.profile.userId === 19960
+              ? <img src={iAm} alt='userPhoto' style={{ width: '200px' }} />
+              : <img src={props.profile.photos.large} alt='userPhoto' />}
+          </div>
+          <div className={s.status}> <ProfileStatus /> </div>
+
         </div>
         <div>
           {props.profile.userId}
