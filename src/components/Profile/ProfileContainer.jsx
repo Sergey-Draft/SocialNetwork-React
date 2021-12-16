@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from './Profile';
-import { getuserProfileThunk } from '../redux/profileReducer';
+import { getuserProfileThunk, getUserStatusThunk, updateUserStatusThunk } from '../redux/profileReducer';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
@@ -9,7 +9,8 @@ import { withRouter } from 'react-router';
 
 let mapStateToProps = (state) => {
   return {
-    profile: state.profilePage.profile
+    profile: state.profilePage.profile,
+    status: state.profilePage.status
   }
 }
 
@@ -32,18 +33,19 @@ class ProfileContainer extends React.Component {
     if (!userId) {
       userId = 19960;
     }
-    this.props.getuserProfileThunk(userId)
+    this.props.getuserProfileThunk(userId);
+    this.props.getUserStatusThunk(userId);
   } 
 
   render() {
-    return <Profile {...this.props} profile={this.props.profile} />
+    return <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateUserStatusThunk} />
   }
 }
 
 
 let WithUrlDataContainerConmponent = withRouter(ProfileContainer)
 
-export default connect(mapStateToProps, { getuserProfileThunk })(WithUrlDataContainerConmponent);
+export default connect(mapStateToProps, { getuserProfileThunk, getUserStatusThunk, updateUserStatusThunk })(WithUrlDataContainerConmponent);
 
 
 

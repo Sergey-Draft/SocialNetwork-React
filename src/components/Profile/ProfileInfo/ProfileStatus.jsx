@@ -7,11 +7,11 @@ class ProfileStatus extends React.Component {
     super(props)
 
     this.state = {
-      status: 'Write your status here...',
+      status: this.props.status,
       editMode: false
     }
   }
-
+  
   handleInput = (e) => {
     this.setState({ status: e.target.value })
   }
@@ -26,6 +26,7 @@ class ProfileStatus extends React.Component {
     this.setState({
       editMode: false
     })
+    this.props.updateStatus(this.state.status)
   }
 
   render() {
@@ -34,7 +35,7 @@ class ProfileStatus extends React.Component {
       <>
         {!editMode &&
           <div>
-            <span onClick={this.editModeActive} >{status}</span>
+            Status: <span onClick={this.editModeActive} >{this.state.status}</span>
           </div>
         }
         {editMode &&
