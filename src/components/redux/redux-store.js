@@ -8,6 +8,7 @@ import sideBarReducer from "./sideBarReducer";
 import usersReducer from "./usersReducer";
 import videoReducer from "./videoReducer";
 import thunk from "redux-thunk";
+import { reducer as formReducer } from 'redux-form'
 
 
 let reducers = combineReducers({
@@ -18,7 +19,8 @@ let reducers = combineReducers({
     musicPage: musicReducer,
     newsPage: newsReducer,
     auth: authReducer,
-    videoPage: videoReducer 
+    videoPage: videoReducer,
+    form: formReducer
 })
 
 let store = createStore(reducers, applyMiddleware(thunk));
