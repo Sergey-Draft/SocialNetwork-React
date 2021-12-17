@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setAuthUserData, userAuthorizationThunk } from '../redux/authReducer';
+import { setAuthUserData, userAuthorizationThunk, userLogoutThunk } from '../redux/authReducer';
 import Header from './Header';
 import myPhoto from '../../img/user2.jpg'
-import axios from 'axios';
 
 
 class HeaderContainer extends React.Component {
@@ -13,9 +12,9 @@ class HeaderContainer extends React.Component {
 
 
   componentDidMount() {
-
-    this.props.userAuthorizationThunk();
+    setTimeout(() => { this.props.userAuthorizationThunk()}, 2000)
   }
+
 
   render() {
     return (
@@ -32,4 +31,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { setAuthUserData, userAuthorizationThunk })(HeaderContainer);
+export default connect(mapStateToProps, { setAuthUserData, userAuthorizationThunk, userLogoutThunk })(HeaderContainer);

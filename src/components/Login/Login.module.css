@@ -1,0 +1,10 @@
+
+label {
+	width: 150px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.input {
+    margin-left: 50px;
+}
