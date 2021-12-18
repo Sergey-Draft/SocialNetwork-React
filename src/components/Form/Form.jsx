@@ -1,4 +1,5 @@
 import React from 'react';
+import Tooltip from '../common/Tooltip';
 
 class Form extends React.Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class Form extends React.Component {
     const {first, second, position } = show;
     return (
       <>
+      <h3>После того, как вы развернёте свою социальную сеть на хостинге (github pages, heroku и т.д.), вам нужно предоставить логин и пароль для работодателя, чтобы тот смог потестить вашу социальную сеть. Ни в коем случае не <Tooltip text = 'Hello!!'> МЕНЯ </Tooltip>  курсор оставляйте свои личные логин и пароль. Укажите, например, на странице Login вашей соц. сети данные тестового аккаунта: </h3>
         <form>
           <label> Name :
             <input type='text' onChange={this.hadleInputChange} value={inputText}></input>

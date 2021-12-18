@@ -10,3 +10,13 @@
   flex-direction: row;
   justify-content: left;
 }
+
+.backgroundPhoto img{
+ width: 100%;
+ max-width: 1000px;
+ height: auto;
+
+}
+
+
+

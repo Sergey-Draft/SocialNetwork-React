@@ -19,7 +19,7 @@ const Header = (props) => {
     <img src='https://w7.pngwing.com/pngs/635/870/png-transparent-logo-flower-flower-purple-violet-logo.png' alt="header"></img>
     <div className={s.login}>
       {props.isAuth 
-      ? <div> <button onClick={props.userLogoutThunk} > Logout </button><span> {props.login} </span></div>
+      ? <div> <span onClick={props.userLogoutThunk} > Logout </span><span> {props.login} </span></div>
       :<NavLink to={'/login'} >Login</NavLink>
       }
     </div>

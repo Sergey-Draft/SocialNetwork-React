@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
 
   return (
     <div>
-      <div>
+      <div className={s.backgroundPhoto} >
         <img src='https://www.prelepapoezija.com/wp-content/uploads/2015/01/hed2.jpg' alt='backgroundPhoto' />
       </div>
       <div className={s.descriptionBlock}>

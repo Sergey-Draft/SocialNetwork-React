@@ -12,7 +12,7 @@ class HeaderContainer extends React.Component {
 
 
   componentDidMount() {
-    setTimeout(() => { this.props.userAuthorizationThunk()}, 2000)
+    this.props.userAuthorizationThunk()
   }
 
 
