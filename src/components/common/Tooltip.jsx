@@ -38,7 +38,6 @@ class Tooltip extends React.Component {
                                 onMouseEnter = {this.toggle}
                                 onMouseOut = {this.toggle}
                 >
-
                     {this.props.children}
                 </span>
                  <div style={style} className={s.toolTip}  >
