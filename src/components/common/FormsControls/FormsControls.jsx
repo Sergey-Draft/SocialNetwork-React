@@ -25,3 +25,4 @@ const FormsControl = ({input, meta, lable, ...props}) => {
 }
 
 export const Textarea = (props) => <FormsControl element="textarea" {...props}/>
+export const Input = (props) => <FormsControl element = "input" {...props} />

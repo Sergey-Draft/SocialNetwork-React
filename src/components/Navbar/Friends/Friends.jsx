@@ -6,7 +6,7 @@ const Friends = (props) => {
    let friends = props.state.friends.map(el => { 
       return (
          
-         <div className={s.item}>
+         <div key={el.id} className={s.item}>
             <NavLink to ='/dialogs/'>
             <img src={el.imgurl} alt='friend_avatar' />
             <span className={s.indicator}></span>
@@ -20,7 +20,7 @@ const Friends = (props) => {
          <div className={s.title}>
             <div className={s.text}>Chat online</div>
          </div>
-         <div class={s.friendsItems}>
+         <div className={s.friendsItems}>
             {friends}
          </div>
 

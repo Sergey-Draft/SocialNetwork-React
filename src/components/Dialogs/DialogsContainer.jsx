@@ -1,6 +1,4 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router';
 import { compose } from 'redux';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { AddMessageBodyCreator, updateNewMessageCreator, UpdateNewUserIdCreator } from '../redux/dialogsReducer';

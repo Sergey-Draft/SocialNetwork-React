@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { authAPI } from "../../api/api";
 
 const SET_USER_DATA = 'SET_AUTH_DATA';
@@ -24,42 +25,46 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthUserData  = (id, email, login, isAuth) => ({ type: SET_USER_DATA, data:{id, email, login, isAuth} });
+export const setAuthUserData = (id, email, login, isAuth) => ({ type: SET_USER_DATA, data: { id, email, login, isAuth } });
 
 export const userAuthorizationThunk = () => {
     return (dispatch) => {
         authAPI.authorization()
-        .then(response => {
-          if (response.data.resultCode === 0) {
-            let { id, email, login } = response.data.data
-            dispatch(setAuthUserData(id, email, login, true))
-          }
-        })
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    let { id, email, login } = response.data.data
+                    dispatch(setAuthUserData(id, email, login, true))
+                }
+            })
     }
-} 
+}
 
 export const userLoginThunk = (email, password, rememberMe = false) => {
+
     return (dispatch) => {
         authAPI.login(email, password, rememberMe)
-        .then(response => {
-          if (response.data.resultCode === 0) {
-              dispatch(userAuthorizationThunk())
-          }
-        })
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(userAuthorizationThunk())
+                } else {
+                    let message = response.data.messages.length > 0 ? response.data.messages[0] : 'Some error';
+                    dispatch(stopSubmit('login', { _error: message }))
+                }
+            })
     }
-} 
+}
 
 export const userLogoutThunk = () => {
     return (dispatch) => {
         authAPI.logout()
-        .then(response => {
-          if (response.data.resultCode === 0) {
-              dispatch(userAuthorizationThunk(null, null, null, false))
-              window.location.reload()
-          }
-        })
+            .then(response => {
+                if (response.data.resultCode === 0) {
+                    dispatch(userAuthorizationThunk(null, null, null, false))
+                    window.location.reload()
+                }
+            })
     }
-} 
+}
 
 
 export default authReducer;

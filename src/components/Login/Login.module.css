@@ -6,5 +6,12 @@ label {
 }
 
 .input {
-    margin-left: 50px;
+    margin-left: 100px;
+}
+
+.commonError {
+	color: #700;
+    font-size: bold;
+    font-size: 16px;
+    padding: 5px 8px;
 }

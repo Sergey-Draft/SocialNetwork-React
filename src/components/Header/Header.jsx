@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+/* import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'; */
 import s from './Header.module.css'
 
 const Header = (props) => {

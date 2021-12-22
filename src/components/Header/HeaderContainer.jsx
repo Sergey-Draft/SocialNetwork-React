@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setAuthUserData, userAuthorizationThunk, userLogoutThunk } from '../redux/authReducer';
 import Header from './Header';
-import myPhoto from '../../img/user2.jpg'
+/* import myPhoto from '../../img/user2.jpg' */
 
 
 class HeaderContainer extends React.Component {
