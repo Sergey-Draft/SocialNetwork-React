@@ -7,9 +7,6 @@ const FormsControl = ({input, meta, lable, ...props}) => {
     console.log(meta)
     return (
         <>
-            <div><label>{lable}</label></div>
-            {/* <div><textarea {...input} {...props} placeholder={lable}/></div> */}
-
             <div>
                 {React.createElement(props.element,{
                     ...input,
@@ -17,7 +14,10 @@ const FormsControl = ({input, meta, lable, ...props}) => {
                     placeholder:lable
                 } )}
             </div>
+            <div className={style.errorContainer}>
             {meta.touched && meta.error ? <div><span className={style.error} >{meta.error}</span></div> : undefined }
+            </div>
+            
             
         </>
 

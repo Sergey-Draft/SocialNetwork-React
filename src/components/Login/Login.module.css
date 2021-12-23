@@ -1,13 +1,94 @@
 
-label {
-	width: 150px;
-	display: inline-block;
-	vertical-align: top;
+.formLogin {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 70px;
 }
 
-.input {
-    margin-left: 100px;
+
+.emailInput,
+.passwordInput {
+	padding: 10px 20px;
+	width: 100%;
+	
 }
+
+.emailInput input,
+.passwordInput input {
+	padding: 10px 20px;
+	width: 90%;
+	border-radius: 12px;
+	border: 1px solid rgb(199, 199, 199);
+	font-size: 16px;
+}
+ 
+.emailInput input:focus,
+.passwordInput input:focus{
+	outline:none;
+	border: #66afe9 solid 1px;
+	box-shadow: 0 0 8px #66afe9;
+	border-radius: 12px;
+}
+
+.rememberMe{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.rememberMe label {
+	margin-left: 30px;
+}
+
+.actionBtns{
+	cursor: pointer;
+	display: flex;
+	width: 60%;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+
+.submitBtn{
+	cursor: pointer;
+	white-space: nowrap;
+    display: inline-block;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-image: linear-gradient(#4f93ce,#285f8f);
+    border: 1px solid #285f8f;
+}
+
+.submitBtn:hover{
+	background-image: linear-gradient(#285f8f, #4f93ce);
+}
+
+
+.clearBtn {
+	white-space: nowrap;
+    display: inline-block;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    background-image: linear-gradient(#fff,#969494);
+    border: 1px solid #d5d5d5;
+    color: #000;
+}
+
+.clearBtn:hover {
+	background-image: linear-gradient(#969494, #fff);
+}
+
+
+.clearBtn[disabled] {
+	opacity: .6;
+    cursor: not-allowed;
+	background-image: linear-gradient(#fff,#969494);
+}
+
 
 .commonError {
 	color: #700;

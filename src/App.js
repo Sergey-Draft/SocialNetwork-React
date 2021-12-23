@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router';
 import './App.css';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
@@ -13,10 +13,14 @@ import 'font-awesome/css/font-awesome.min.css';
 import VideoContainer from './components/Videos/VideoContainer';
 import Form from './components/Form/Form';
 import Login from './components/Login/Login';
+import ContextLogin from './components/context/context';
 
 const App = (props) => {
 
+  const [modalActive, setModalActive] = useState(true)
+
   return (
+    <ContextLogin.Provider value={{modalActive, setModalActive}} >
     <div className='app-wrapper'>
       <HeaderContainer />
       <Navbar />
@@ -36,7 +40,10 @@ const App = (props) => {
 
       </div>
     </div>
+              </ContextLogin.Provider>
   )
+
+  
 }
 
 export default App;

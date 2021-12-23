@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import Modal from '../common/Modal/Modal';
 import Tooltip from '../common/Tooltip';
 
 class Form extends React.Component {
@@ -6,6 +8,7 @@ class Form extends React.Component {
     super()
     
     this.state = {
+      modalActive: true,
       inputText: '',
       textArea: '',
       select: '',
@@ -44,13 +47,21 @@ class Form extends React.Component {
      })
   }
 
-
+  setModalActive = (value) => {
+    this.setState({modalActive: value})
+  }
+  
 
   render() {
     const {inputText, textArea, select, show } = this.state;
     const {first, second, position } = show;
+
+/*     const {modalActive, setModalActive} = useState(false); */
+
     return (
       <>
+
+
       <h3>После того, как вы развернёте свою социальную сеть на хостинге (github pages, heroku и т.д.), вам нужно предоставить логин и пароль для работодателя, чтобы тот смог потестить вашу социальную сеть. Ни в коем случае не <Tooltip text = 'Hello!!'> МЕНЯ </Tooltip>  курсор оставляйте свои личные логин и пароль. Укажите, например, на странице Login вашей соц. сети данные тестового аккаунта: </h3>
         <form>
           <label> Name :
@@ -70,6 +81,15 @@ class Form extends React.Component {
         <h2>{first}</h2><br/>
         <h2>{second}</h2><br/>
         <h2>{position}</h2>
+
+        <button className='modalBtn' onClick={() => {this.setModalActive(true)}} >Open modal</button>
+
+        <Modal active={this.state.modalActive} setActive={this.setModalActive}>
+          <p>adsaascascasc</p>
+        </Modal>
+
+
+
       </>
     )
   }
