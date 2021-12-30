@@ -33,7 +33,7 @@ const App = (props) => {
         <Route path='/video' render={() => <VideoContainer />} />
         <Route path='/music' render={() => <MusicContainer />} />
         <Route path='/settings' component={Settings} />
-        {<Route path='/users' render={() => <UsersContainer />} />}
+        <Route path='/users' render={() => <UsersContainer />} />
         <Route path='/form' render={() => <Form />} />
         <Route path='/login' render={() => <Login />} />
 

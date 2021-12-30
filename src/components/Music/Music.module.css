@@ -4,50 +4,128 @@
 }
 
 .play__list__wrapper{
-
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: space-around;
 flex-wrap: wrap;
 
 }
 
 .item{
-    width: 45%;
+    width: 100%;
     margin: 15px;
-    border: 1px solid black;
+/*     border: 1px solid black; */
     display: flex;
-flex-direction: column;
-flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    filter: grayscale(100%) brightness(45%);
+    transition: filter 0.5s ease;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0px 1px 6px 2px #0002;
+    
 
+}
+
+.itemActive {
+  width: 100%;
+  margin: 15px;
+/*   border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  filter: grayscale(0%) brightness(100%);
+  transition: filter 0.5s ease;
+  align-items: center;
 }
 
 
 
   .lable{
-    width: 100%;
-    filter: grayscale(100%) brightness(45%);
-    transition: filter 0.5s ease;
+    width: 20%;
+    max-height: 150px;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
   }
 
   .lable img {
-    width: 100%;
-    height: auto;
+    width: 96%;
+    height: 96%;
+    margin: 0 auto;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-radius: 16px;
+    
   }
 
-  .lable:hover {
+  .item:hover {
     filter: grayscale(0%) brightness(100%);
+    background-color: rgb(243, 240, 240);
+    transition: all 0.7s;
   }
 
-  .tracklist{
-    margin: 15px 0;
-    border: black 2px solid;
+  .title {
+  width: 50%;
+}
+
+
+  .title .name {
+    margin-bottom: 5px;
+    font-weight: 900;
+    padding-left: 20px;
   }
 
-  .trackTitle{
-    border-bottom: blue 1px solid;
-    cursor: pointer;
+  .title .country {
+    margin-bottom: 5px;
+    padding-left: 30px;
+    font-style: italic;
   }
+
+  .title .likes{
+    font-size: 24px;
+    color: chartreuse;
+  }
+
+
+.playRadioButton{
+  width: 60px;
+  height: 60px;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  background:#efeeee;
+  border-radius:50%;
+  transition:all 0.3s ease-in;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1),
+    -4px -4px 4px rgba(255,255,255,0.6);
+    filter: grayscale(0%) brightness(100%);
+    opacity: 0;
+}
+
+.playRadioButton:active{
+  box-shadow: inset 5px 5px 5px rgba(0,0,0,0.1),
+    inset -4px -4px 4px rgba(255,255,255,0.6);
+    /* filter: grayscale(0%) brightness(100%); */
+    color:#721efa;
+}
+
+.fa{
+  display:grid;
+  place-items:center;
+  font-size:4rem;
+  color:gray;
+}
+
+.fa:active {
+  color:#721efa;
+}
+
+
 
 
 

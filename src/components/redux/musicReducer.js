@@ -6,7 +6,7 @@ const SET_TRACK_LIST = 'SET_TRACK_LIST';
 let initialState = {
     genre: [],
     tracklist: [],
-    currentRadioLink: null,
+    currentRadioLink: '',
     tracklistURL: 'https://api.deezer.com/radio/37151/tracks',
 
 }

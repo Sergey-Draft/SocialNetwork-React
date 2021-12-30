@@ -31,7 +31,7 @@ let LoginForm = (props) => {
 
                 <div className={s.formLogin} >
                     <div className={s.emailInput}>
-                        <Field type='text' name='email' component={Input} /* className={s.emailInput} */ lable='Email' validate={[required, email]} />
+                        <Field type='text' name='email' component={Input} /* className={s.emailInput} */ lable='email' validate={[required, email]} />
                     </div>
                     <div className={s.passwordInput} >
                         <Field type='text' name='password' id='password' component={Input} /* className={s.passwordInput} */ lable={'password'} validate={[required, maxPasswordLength, minPasswordLength]} />
@@ -39,7 +39,6 @@ let LoginForm = (props) => {
                     <div className={s.rememberMe}>
                         <Field component={Input} type='checkbox' name='rememberMe' id='rememberMe' /* className={s.input} */ lable='Remember Me' />
                         <label htmlFor='rememberMe' >Remember me</label>
-                        <span className={s.check} ></span>
                     </div>
                     <div className={s.actionBtns}>
                         <button type="submit" className={s.submitBtn} disabled={submitting}>Submit</button>
